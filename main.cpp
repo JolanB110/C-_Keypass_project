@@ -1,0 +1,100 @@
+#include <string>
+#include <vector>
+#include <iostream>
+
+int main(){
+    std::string nom;
+    std::string mdp;
+
+    int rep = -1;
+
+    while (rep!=0)
+    {
+        std::cout << "--- Menu Principal ---" << '\n';
+        std::cout << "1 : Creer un compte " << '\n';
+        std::cout << "2 : Se Connecter a un compte existant " << '\n';
+        std::cout << "3 : Supprime un compte existant " << '\n';
+        std::cout << "0 : Quitter l'application " << '\n';
+        std::cin >> rep;
+
+        if(rep==1){
+
+            std::cout << "--- Menu Creation de compte ---" << '\n';
+            std::cout << "Entree votre nom : " << '\n' ;
+            std::cin >> nom;
+            std::cout<< "Entree votre mot de passe : " << '\n';
+            std::cin >> mdp;
+
+        }
+        else if(rep==2){
+
+            std::cout << "--- Menu Connexion ---" << '\n';
+            std::cout << "Entree votre nom : " << '\n' ;
+            std::cin >> nom;
+            std::cout << "Entree votre mot de passe : " << '\n';
+            std::cin >> mdp;
+            
+            if(/*test_connexion==0*/false){
+                std::cout<< "Le mot de passe ou le nom n'est pas correcte" << '\n';
+                break;
+            }
+
+            while(rep!=4){
+                std::cout << "--- Bienvenue (ajouter nom compte) ---" << '\n';
+                std::cout << "1 : Ajouter un mot de passe " << '\n';
+                std::cout << "2 : Rechercher un mot de passe " << '\n';
+                std::cout << "3 : Tester un mot de passe " << '\n';
+                std::cout << "4 : Se deconnecter " << '\n';
+                std::cin >> rep;
+
+                if(rep==1){
+
+                    std::cout << "--- Menu Ajout de Mot de passe ---" << '\n';
+                    std::cout << "Entree l application associe au mot de passe: " << '\n' ;
+                    std::cin >> nom;
+                    std::cout<< "1 : Entree votre mot de passe " << '\n';
+                    std::cout<< "2 : Generer un mot de passe " << '\n';
+                    std::cin >> mdp;
+
+                    if(mdp=="2"){
+                        //mdp = mdpgenerator() <<< générer mdp aléatoire
+                        std::cout << "Voici votre nouveau mot de passe :" << mdp <<'\n';
+                        //enregistrer mdp
+                    }
+
+                    else{
+                        //enregistre mdp
+                    }
+                }
+
+                else if(rep==2){
+                    //rechercher un mot de passe
+                }
+
+                else if(rep==3){
+                    //tester un mot de passe
+                }
+            }
+        }
+        else if(rep==3){
+
+            std::cout << "--- Menu Suppression de compte ---" << '\n';
+            std::cout << "Entree votre nom : " << '\n' ;
+            std::cin >> nom;
+            std::cout<< "Entree votre mot de passe : " << '\n';
+            std::cin >> mdp;
+
+            //suppr_compte(nom,mdp) a faire
+
+            if(/*suppr_compte(nom,mdp)==0*/true){
+                std::cout << "Votre compte a bien ete supprime" << '\n';
+            }
+            else{
+                std::cout << "Erreur dans la suppression de votre compte" << '\n';
+            }
+            
+        }
+    }
+    std::cout << '\n' << "Merci de votre visite !!!" << '\n';
+
+};
